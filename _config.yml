@@ -1,7 +1,7 @@
-#title: "test1"
+title: "Xizhi Tan"
 author: "test2"
 description: "Drexel University"
-permalink: /:title/
+permalink: /:author/
 lang: "en"
 excerpt_separator: "\n\n\n"
 date_format: "%B %d, %Y"
