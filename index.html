@@ -35,23 +35,23 @@
       justify-content: center;
       align-items: center;
       padding: 13px 20px;
-      gap: 150px;
+      gap: 120px; 
       max-width: 1200px;
       margin: 0 auto;
       position: relative;
     }
     .nav-links {
       display: flex;
-      gap: 120px;
+      gap: 90px; 
       align-items: center;
     }
     .nav-links a {
       color: #ffffff;
-      font-size: 18px; /* 1.1x scale */
+      font-size: 18px; 
       font-weight: normal; 
       text-decoration: none;
       text-transform: uppercase;
-      letter-spacing: 0.5px; /* Tightened letter spacing */
+      letter-spacing: 0.5px; 
     }
     .nav-links a:hover {
       text-decoration: underline;
@@ -121,7 +121,7 @@
     .intro-image {
       width: 35%;
       padding: 2.5%;
-      padding-top: 80px; /* Pushes the image down slightly on desktop */
+      padding-top: 80px; 
       text-align: left; 
       box-sizing: border-box;
     }
@@ -153,13 +153,64 @@
 
     ul.simple-list { padding-left: 20px; margin-top: 5px; }
     ul.simple-list li { margin-bottom: 6px; }
+
+    /* ========================================================== */
+    /* --- NEWS & UPDATES SCROLL BOX --- */
+    /* ========================================================== */
     
-    /* Vertical Profile Links (Desktop) */
+    #news {
+      margin-top: -10px; 
+    }
+    #news h2 {
+      margin-top: 0px; 
+    }
+
+    .news-box {
+      max-height: 220px; 
+      overflow-y: auto;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 15px 20px;
+      background-color: #fbfbfb;
+      margin-bottom: 55px; 
+      
+      scrollbar-width: thin;
+      scrollbar-color: #ccc #f1f1f1;
+    }
+    .news-box ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .news-box li {
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed #e0e0e0;
+      font-size: 17px;
+    }
+    .news-box li:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .news-date {
+      font-weight: bold;
+      color: #8C1515; 
+      margin-right: 8px;
+    }
+    
+    /* WebKit (Chrome/Safari) Custom Scrollbar */
+    .news-box::-webkit-scrollbar { width: 8px; }
+    .news-box::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 8px; }
+    .news-box::-webkit-scrollbar-thumb { background: #ccc; border-radius: 8px; }
+    .news-box::-webkit-scrollbar-thumb:hover { background: #aaa; }
+    
+    /* Vertical Profile Links */
     .profile-links {
       margin-top: 25px;
       display: inline-flex;
       flex-direction: column;
-      align-items: flex-start; /* Lines up the icons perfectly on the left */
+      align-items: flex-start; 
       gap: 12px;
       text-align: left;
     }
@@ -227,19 +278,18 @@
     @media (max-width: 950px) {
       .main-container { padding-left: 15px; padding-right: 15px; }
       .nav-container { gap: 50px; }
-      .nav-links { gap: 50px; }
+      .nav-links { gap: 40px; }
     }
 
     @media (max-width: 768px) {
-      /* Nav Bar changes to Dropdown */
       .nav-container { justify-content: space-between; gap: 0; }
       .menu-icon { display: block; }
       .nav-links {
-        display: none; /* Hidden by default on mobile */
+        display: none; 
         flex-direction: column;
         background-color: #8C1515;
         position: absolute;
-        top: 55px; /* Sits right under the nav bar */
+        top: 55px; 
         left: 20px;
         width: 140px; 
         padding: 15px;
@@ -250,7 +300,6 @@
       }
       .nav-links.active { display: flex; } 
       
-      /* Scale down fonts on mobile */
       body { font-size: 16px; }
       h1 { font-size: 24px; }
       h2 { font-size: 20px; }
@@ -259,28 +308,21 @@
       .papertitle { font-size: 17px; }
       .year-heading { font-size: 17px; } 
       
-      /* Stack Photo on Top for Mobile & Center Align */
       .intro-block { flex-direction: column; align-items: center; }
       .intro-image { width: 100%; padding: 10px 15px; text-align: center; padding-top: 10px; }
       .intro-image img { max-width: 220px; margin: 0 auto; }
       .intro-text { width: 100%; padding: 10px 15px; }
       
-      /* --- MOBILE ICONS ONLY (Horizontal Row) --- */
       .profile-links { 
         display: flex;
         flex-direction: row; 
         justify-content: center; 
         width: 100%;
         margin-top: 15px; 
-        gap: 25px; /* Space between icons */
+        gap: 25px; 
       }
-      .profile-links a span {
-        display: none; /* Hides the text on mobile */
-      }
-      .profile-links a i { 
-        font-size: 28px; /* Slightly larger for touch targets */
-        width: auto; 
-      }
+      .profile-links a span { display: none; }
+      .profile-links a i { font-size: 28px; width: auto; }
       
       .toggle-btn { padding: 6px 12px; font-size: 14px; }
     }
@@ -292,7 +334,6 @@
     body.dark-mode name, body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode .papertitle { color: #ffffff; }
     body.dark-mode a { color: #6eb5ff; }
     
-    /* Strictly protect the Top Nav */
     body.dark-mode .nav-links { background-color: #8C1515; } 
     body.dark-mode .nav-links a, body.dark-mode .menu-icon, body.dark-mode .theme-btn { color: #ffffff !important; }
     
@@ -302,16 +343,28 @@
     body.dark-mode a.gray-link:hover { color: #ffffff; }
     body.dark-mode .author-list { color: #bbbbbb; }
     
-    /* Red text highlights in dark mode */
     body.dark-mode .award-text,
     body.dark-mode .award-text a,
     body.dark-mode .pub-text a[style*="color: #8C1515"] { color: #ff6b6b !important; }
     
     body.dark-mode .profile-links a { color: #bbbbbb; }
     body.dark-mode .profile-links a:hover { color: #ff6b6b; }
+    
     body.dark-mode .toggle-container { background-color: #2a2a2a; border-color: #444; }
     body.dark-mode .toggle-btn { color: #aaaaaa; }
     body.dark-mode .toggle-btn.active { background-color: #4a4a4a; color: #6eb5ff; }
+
+    /* Dark Mode for News Scroll Box */
+    body.dark-mode .news-box {
+      background-color: #262626;
+      border-color: #444;
+      scrollbar-color: #666 #333; 
+    }
+    body.dark-mode .news-box li { border-bottom-color: #444; }
+    body.dark-mode .news-date { color: #ff6b6b; }
+    body.dark-mode .news-box::-webkit-scrollbar-track { background: #333; }
+    body.dark-mode .news-box::-webkit-scrollbar-thumb { background: #666; }
+    body.dark-mode .news-box::-webkit-scrollbar-thumb:hover { background: #888; }
   </style>
 </head>
 
@@ -323,6 +376,7 @@
       
       <div class="nav-links" id="nav-links">
         <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#news" onclick="closeMenu()">News</a>
         <a href="#papers" onclick="closeMenu()">Papers</a>
         <a href="#awards" onclick="closeMenu()">Awards</a>
         <a href="#experience" onclick="closeMenu()">Experience</a>
@@ -367,6 +421,26 @@
       </div>
 
     </div>
+
+    <!-- ================= NEWS & UPDATES SECTION ================= -->
+    <div id="news" class="section-container">
+      <h2>News & Updates</h2>
+      <div class="news-box">
+        <ul>
+          <li><span class="news-date">Nov 14, 2026</span> Invited talk at <a href="https://sites.duke.edu/words2026/" target="_blank">WORDS 2026: Workshop in Operations Research and Data Science</a> at Duke University.</li>
+          <li><span class="news-date">Nov 8–11, 2026</span> Presenting the accepted paper <a href="https://arxiv.org/abs/2609.02872v1" target="_blank">"Approximately Efficient Multidimensional Bilateral Trade"</a> at FOCS 2026 in New York.</li>
+          <li><span class="news-date">Nov 1, 2026</span> Presenting the accepted paper <a href="https://arxiv.org/pdf/2608.14548" target="_blank">"Forging Self-Funded Marketplaces among Strategic Agents"</a> at the <a href="https://submissions.mirasmart.com/InformsAnnual2026/Itinerary/EventDetail.aspx?evt=872" target="_blank">INFORMS Job Market Showcase</a> in San Francisco. <strong>Stop by Session MA28 from 8:00–8:15 AM at Moscone South-206 (Level 2)!</strong></li>
+          <li><span class="news-date">Oct 7–9, 2026</span> Invited talk at the <a href="https://www.duffield.cornell.edu/orie/young-researchers-workshop/" target="_blank">Young Researchers Workshop 2026</a> at Cornell University in Ithaca.</li>
+          <li><span class="news-date">Aug 26, 2026</span> Presenting <a href="https://arxiv.org/pdf/2608.14548" target="_blank">Self-Funded Marketplaces</a> at the Google Theory Seminar in New York.</li>
+          <li><span class="news-date">July 12–17, 2026</span> Attending <a href="https://www.dagstuhl.de/en/seminars/seminar-calendar/seminar-details/26292" target="_blank">Dagstuhl Seminar 26292: Analysis of Algorithms Beyond the Worst Case</a> at Dagstuhl.</li>
+          <li><span class="news-date">July 8, 2026</span> Presenting the accepted paper <a href="https://arxiv.org/pdf/2608.14548" target="_blank">"Forging Self-Funded Marketplaces among Strategic Agents"</a> at EC 2026 in Rome.</li>
+          <li><span class="news-date">July 6, 2026</span> Invited talk at the <a href="https://sites.google.com/view/ec26-workshop-market-design/" target="_blank">INFORMS Workshop on Market Design</a> in Rome.</li>
+          <li><span class="news-date">June 22, 2026</span> Presenting the accepted paper <a href="https://arxiv.org/abs/2604.00129" target="_blank">"Approximating Gains-from-Trade in Matching Markets"</a> at STOC 2026 in Salt Lake City.</li>
+          <li><span class="news-date">June 16–17, 2026</span> Presenting two works at the 2026 ESIF Economics and AI+ML Meeting.</li>
+        </ul>
+      </div>
+    </div>
+    <!-- ========================================================== -->
 
     <div id="papers" class="section-container">
       
@@ -439,7 +513,7 @@
       <div id="all-works" style="display: none;">
 
         <div class="year-heading">Under Submission / Working Papers</div>
-      
+        
         <div class="pub-block">
           <div class="pub-text">
             <span class="papertitle">When to Trust a Signal: Optimal Stopping Beyond Secretaries</span><br>
